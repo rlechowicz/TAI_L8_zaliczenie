@@ -1,0 +1,8 @@
+ES5:
+-zmienne var
+-"Complex.prototype" przed nazwami metod klasy
+
+ES6:
+-zmienne let
+-"use strict;" w pierwszej linii kodu
+
