@@ -7,6 +7,8 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppNavbarComponent } from './components/app-navbar/app-navbar.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogItemComponent } from './components/blog-item/blog-item.component';
 
 const appRoutes: Routes = [
   {
@@ -20,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: "quiz",
     component: QuizComponent
+  },
+  {
+    path: "blog",
+    component: BlogComponent
   }
 ]
 
@@ -29,7 +35,9 @@ const appRoutes: Routes = [
     ContactComponent,
     QuizComponent,
     HomeComponent,
-    AppNavbarComponent
+    AppNavbarComponent,
+    BlogComponent,
+    BlogItemComponent
   ],
   imports: [
     BrowserModule,
