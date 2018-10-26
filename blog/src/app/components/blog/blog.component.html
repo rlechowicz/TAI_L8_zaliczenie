@@ -1,1 +1,5 @@
-<app-blog-item [image]="image" [text]="text"></app-blog-item>
+<ul>
+  <li *ngFor="let item in items">
+    <app-blog-item [image]="item.item-image" [text]="item.item-text"></app-blog-item>
+  </li>
+</ul>

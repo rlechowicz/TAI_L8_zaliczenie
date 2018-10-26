@@ -9,6 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppNavbarComponent } from './components/app-navbar/app-navbar.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { BlogItemTextComponent } from './components/blog-item-text/blog-item-text.component';
+import { BlogItemImageComponent } from './components/blog-item-image/blog-item-image.component';
+import { BlogItemDetailComponent } from './components/blog-item-detail/blog-item-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +29,10 @@ const appRoutes: Routes = [
   {
     path: "blog",
     component: BlogComponent
+  },
+  {
+    path: "blog/detail/:id",
+    component: BlogItemDetailComponent
   }
 ]
 
@@ -37,7 +44,10 @@ const appRoutes: Routes = [
     HomeComponent,
     AppNavbarComponent,
     BlogComponent,
-    BlogItemComponent
+    BlogItemComponent,
+    BlogItemTextComponent,
+    BlogItemImageComponent,
+    BlogItemDetailComponent
   ],
   imports: [
     BrowserModule,
