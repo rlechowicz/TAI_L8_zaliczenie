@@ -9,6 +9,7 @@ export class BlogItemComponent implements OnInit {
 
   @Input('image') image: string;
   @Input('text') text: string;
+  @Input('id') id;
 
   constructor() { }
 

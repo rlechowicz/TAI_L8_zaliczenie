@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BlogComponent } from '../blog/blog.component';
 
 @Component({
   selector: 'app-blog-item-detail',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogItemDetailComponent implements OnInit {
 
-  constructor() { }
+  id;
+  post;
+  
+  constructor(private _Activatedroute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = this._Activatedroute.snapshot.params['id'];
+	this.post = new BlogComponent().items.find(p => p.id == this.id);
   }
 
 }
