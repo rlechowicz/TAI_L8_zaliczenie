@@ -9,6 +9,7 @@ import {DataServiceService} from '../../services/data-service.service';
 export class BlogComponent implements OnInit {
 
   items: any;
+  filterText: string;
 
   constructor(private dataService: DataServiceService) { }
 

@@ -5,8 +5,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(value: any[], filterText: any): any {
+    if (!value) {
+      return[];
+    }
+    if (!filterText) {
+      return value;
+    }
+    filterText = filterText.toLowerCase();
+
+    return value.filter(val => {
+      return val.title.toLowerCase().includes(filterText);
+    });
   }
 
 }
