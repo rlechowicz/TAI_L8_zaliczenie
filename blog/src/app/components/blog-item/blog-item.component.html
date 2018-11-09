@@ -4,9 +4,9 @@
 		<app-blog-item-image [image]="image"></app-blog-item-image>
       <div class="card-body">
         <p class="card-text">
-		  <app-blog-item-text [text]="text | summary:80" [id]="id"></app-blog-item-text>
-		</p>
-		<a [routerLink]="['/blog/details/',id]">Czytaj dalej..</a>
+		      <app-blog-item-text [text]="text | summary:80" [id]="id"></app-blog-item-text>
+		    </p>
+		    <a [routerLink]="['/blog/details/',id]">Czytaj dalej..</a>
       </div>
     </div>
   </div>

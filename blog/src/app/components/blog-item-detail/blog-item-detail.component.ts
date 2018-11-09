@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BlogComponent } from '../blog/blog.component';
+import {DataServiceService} from '../../services/data-service.service';
 
 @Component({
   selector: 'app-blog-item-detail',
@@ -12,11 +12,13 @@ export class BlogItemDetailComponent implements OnInit {
   id;
   post;
   
-  constructor(private _Activatedroute: ActivatedRoute) { }
+  constructor(private _Activatedroute: ActivatedRoute, private dataService: DataServiceService) { }
 
   ngOnInit() {
     this.id = this._Activatedroute.snapshot.params['id'];
-	this.post = new BlogComponent().items.find(p => p.id == this.id);
+    this.dataService.get(this.id).subscribe(result => {
+      this.post = result;
+    } );
   }
 
 }
