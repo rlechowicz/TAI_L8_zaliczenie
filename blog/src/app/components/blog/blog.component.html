@@ -3,10 +3,7 @@
 
     <form class="navbar-form" role="search">
       <div class="input-group add-on">
-        <input [{ngModel}]="filterText" class="form-control" placeholder="Czego szukasz?" name="title" id="search" type="text">
-        <!--<div class="input-group-btn">-->
-          <!--<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>-->
-        <!--</div>-->
+        <input [(ngModel)]="filterText" (ngModelChange)="setQuery()" class="form-control" placeholder="Czego szukasz?" name="title" id="search" type="search">
       </div>
     </form>
 

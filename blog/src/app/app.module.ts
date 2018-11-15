@@ -16,6 +16,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FilterPipe } from './filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { DataServiceService } from './services/data-service.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -58,7 +59,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+	FormsModule,
+	ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

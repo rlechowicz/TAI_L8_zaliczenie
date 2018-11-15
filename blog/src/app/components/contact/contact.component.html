@@ -1,48 +1,48 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <div class="card">
-      <form>
+      <form [formGroup]="form">
         <div class="card-header form-group">
           <label for="imie">Imię:</label>
-          <input type="text" class="form-control" id="imie">
+          <input formControlName="imie" type="text" class="form-control" id="imie">
         </div>
         <div class="card-body form-group">
           <label for="nazwisko">Nazwisko:</label>
-          <input type="text" class="form-control" id="nazwisko">
+          <input formControlName="nazwisko" type="text" class="form-control" id="nazwisko">
         </div>
         <div class="card-header card-footer form-group">
           <label for="email">E-mail:</label>
-          <input type="email" class="form-control" id="email">
+          <input formControlName="email" type="email" class="form-control" id="email">
         </div>
         <div class="card-body form-group form-check-inline">
-          <input class="form-check-input" type="radio" name="plec" id="plec1" value="Mężczyzna" checked>
+          <input formControlName="plec" class="form-check-input" type="radio" name="plec" id="plec1" value="Mężczyzna" checked>
           <label class="form-check-label" for="plec1">Mężczyzna</label>
         </div>
         <div class="card-body form-group form-check-inline">
-          <input class="form-check-input" type="radio" name="plec" id="plec2" value="Kobieta">
+          <input formControlName="plec" class="form-check-input" type="radio" name="plec" id="plec2" value="Kobieta">
           <label class="form-check-label" for="plec2">Kobieta</label>
         </div>
         <div class="card-header card-footer form-group">
           <label for="wiadomosc">Wiadomość:</label>
-          <textarea class="form-control" id="wiadomosc" rows="3"></textarea>
+          <textarea formControlName="wiadomosc" class="form-control" id="wiadomosc" rows="3"></textarea>
         </div>
         <div class="card-body form-group">
           <label for="wiek">Wiek:</label>
-          <input type="number" class="form-control" id="wiek" minvalue="0" maxvalue="120" value="18">
+          <input formControlName="wiek" type="number" class="form-control" id="wiek" minvalue="0" maxvalue="120" value="18">
         </div>
         <div class="card-header card-footer form-group">
           <label for="stanCywilny">Stan cywilny:</label>
           <select id="stanCywilny" class="form-control">
             <option selected>Panna/Kawaler</option>
-            <option>Panna</option>
-            <option>Kawaler</option>
+            <option>Mężatka/Żonaty</option>
+            <option>Wdowa/Wdowiec</option>
           </select>
         </div>
         <div class="card-body">
           <button type="reset" class="btn btn-block">Wyczyść</button>
         </div>
         <div class="card-footer">
-          <button type="submit" class="btn btn-block btn-primary">Wyślij</button>
+          <button [disabled]="form.invalid" type="submit" class="btn btn-block btn-primary">Wyślij</button>
         </div>
       </form>
     </div>
