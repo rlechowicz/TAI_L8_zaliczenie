@@ -19,6 +19,7 @@ import { DataServiceService } from './services/data-service.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { BlogHomeComponent } from './components/blog-home/blog-home.component';
+import { TextFormatDirective } from './directives/text-format.directive';
 
 const appRoutes: Routes = [
   {
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
     SummaryPipe,
     FilterPipe,
     SearchBarComponent,
-    BlogHomeComponent
+    BlogHomeComponent,
+    TextFormatDirective
   ],
   imports: [
     BrowserModule,
