@@ -1,15 +1,3 @@
-<div class="container">
-  <div class="col-md-6 mx-auto d-block">
-
-    <form class="navbar-form" role="search">
-      <div class="input-group add-on">
-        <input [(ngModel)]="filterText" (ngModelChange)="setQuery()" class="form-control" placeholder="Czego szukasz?" name="title" id="search" type="search">
-      </div>
-    </form>
-
-  </div>
-</div>
-
 <ul style="list-style-type:none">
   <li *ngFor="let item of items | filter: filterText">
     <app-blog-item [image]="item.url" [text]="item.title" [id]="item.id"></app-blog-item>

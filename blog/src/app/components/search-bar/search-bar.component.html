@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-md-6 mx-auto d-block">
+
+    <form class="navbar-form" role="search">
+      <div class="input-group add-on">
+        <input [(ngModel)]="filterText" (ngModelChange)="sendFilter($event)" class="form-control" placeholder="Czego szukasz?" name="title" id="search" type="search">
+      </div>
+    </form>
+
+  </div>
+</div>

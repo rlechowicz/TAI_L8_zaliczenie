@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataServiceService} from '../../services/data-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -10,7 +10,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class BlogComponent implements OnInit {
 
   items: any;
-  filterText: string;
+
+  @Input('filterText') filterText: string;
 
   constructor(private dataService: DataServiceService, private router: Router, private route: ActivatedRoute) {
   }
@@ -19,13 +20,9 @@ export class BlogComponent implements OnInit {
     this.dataService.getAll().subscribe(result => {
       this.items = result;
     } );
-	this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe(params => {
       this.filterText = params['title'];
     } );
-  }
-  
-  setQuery() {
-	this.router.navigate(['blog'], {queryParams: {title: this.filterText}});
   }
 
 }

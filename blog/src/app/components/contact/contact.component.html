@@ -5,14 +5,17 @@
         <div class="card-header form-group">
           <label for="imie">Imię:</label>
           <input formControlName="imie" type="text" class="form-control" id="imie">
+          <div *ngIf="form.get('imie').invalid && form.get('imie').dirty">Popraw to!</div>
         </div>
         <div class="card-body form-group">
           <label for="nazwisko">Nazwisko:</label>
           <input formControlName="nazwisko" type="text" class="form-control" id="nazwisko">
+          <div *ngIf="form.get('nazwisko').invalid && form.get('nazwisko').dirty">Popraw to!</div>
         </div>
         <div class="card-header card-footer form-group">
           <label for="email">E-mail:</label>
           <input formControlName="email" type="email" class="form-control" id="email">
+          <div *ngIf="form.get('email').invalid && form.get('email').dirty">Popraw to!</div>
         </div>
         <div class="card-body form-group form-check-inline">
           <input formControlName="plec" class="form-check-input" type="radio" name="plec" id="plec1" value="Mężczyzna" checked>
@@ -21,14 +24,17 @@
         <div class="card-body form-group form-check-inline">
           <input formControlName="plec" class="form-check-input" type="radio" name="plec" id="plec2" value="Kobieta">
           <label class="form-check-label" for="plec2">Kobieta</label>
+          <div *ngIf="form.get('plec').invalid && form.get('plec').dirty">Popraw to!</div>
         </div>
         <div class="card-header card-footer form-group">
           <label for="wiadomosc">Wiadomość:</label>
           <textarea formControlName="wiadomosc" class="form-control" id="wiadomosc" rows="3"></textarea>
+          <div *ngIf="form.get('wiadomosc').invalid && form.get('wiadomosc').dirty">Popraw to!</div>
         </div>
         <div class="card-body form-group">
           <label for="wiek">Wiek:</label>
           <input formControlName="wiek" type="number" class="form-control" id="wiek" minvalue="0" maxvalue="120" value="18">
+          <div *ngIf="form.get('wiek').invalid && form.get('wiek').dirty">Popraw to!</div>
         </div>
         <div class="card-header card-footer form-group">
           <label for="stanCywilny">Stan cywilny:</label>
