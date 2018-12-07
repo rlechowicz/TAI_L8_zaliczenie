@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-blog-home',
@@ -9,9 +10,13 @@ export class BlogHomeComponent implements OnInit {
 
   filterText: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToBlogCreate() {
+    this.router.navigate(['/blog/create']);
   }
 
   getName($event) {

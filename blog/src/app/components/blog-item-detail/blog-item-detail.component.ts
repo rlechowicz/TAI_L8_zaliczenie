@@ -11,15 +11,18 @@ import {group} from '@angular/animations';
 export class BlogItemDetailComponent implements OnInit {
 
   id;
-  post;
-  
-  constructor(private _Activatedroute: ActivatedRoute, private dataService: DataServiceService) { }
+  item = {};
+
+  constructor(private dataServ: DataServiceService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this._Activatedroute.snapshot.params['id'];
-    this.dataService.get(this.id).subscribe(result => {
-      this.post = result;
-    } );
+    this.route.params.subscribe(params => {
+      this.id = params['id']
+    });
+    this.dataServ.get(this.id).subscribe(result => {
+      console.log(result);
+      this.item = result;
+    })
   }
 
 }

@@ -1,0 +1,32 @@
+<div class="content">
+  <form>
+    <fieldset>
+      <div class="container-fluid">
+        <legend>Uzupełnij dane</legend>
+
+        <div class="form-group">
+          <label>ID: </label>
+          <input [(ngModel)]="item.id" name="id" placeholder="Podaj id">
+        </div>
+
+        <div class="form-group">
+          <label>Tytuł: </label>
+          <input [(ngModel)]="item.title" name="title" placeholder="Podaj tytuł">
+        </div>
+
+        <div class="form-group">
+          <label>Url: </label>
+          <input [(ngModel)]="item.url" name="url" placeholder="Podaj url">
+        </div>
+
+        <div class="form-group">
+          <label>Treść: </label>
+          <input [(ngModel)]="item.content" name="content" placeholder="Podaj treść">
+        </div>
+
+        <button type="reset">Wyczyść</button>
+        <button type="submit" (click)="setData(item)">Wyślij</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

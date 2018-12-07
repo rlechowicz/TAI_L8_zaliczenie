@@ -20,27 +20,41 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { BlogHomeComponent } from './components/blog-home/blog-home.component';
 import { TextFormatDirective } from './directives/text-format.directive';
+import { BlogCreateComponent } from './components/blog-create/blog-create.component';
+import { AdminGuard } from './services/admin-guard.guard';
+import { LoginComponent } from './components/login/login.component';
+// import { AdminProfileComponent } from './components/';
 
 const appRoutes: Routes = [
   {
-    path: "",
+    path: '',
     component: HomeComponent
   },
   {
-    path: "contact",
+    path: 'contact',
     component: ContactComponent
   },
   {
-    path: "quiz",
+    path: 'quiz',
     component: QuizComponent
   },
   {
-    path: "blog",
+    path: 'blog',
     component: BlogHomeComponent
   },
   {
-    path: "blog/details/:id",
+    path: 'blog/details/:id',
     component: BlogItemDetailComponent
+  },
+  {
+    path: 'blog/create',
+    component: BlogCreateComponent,
+  },
+  {
+    path: 'admin',
+    // component: AdminProfileComponent,
+    canActivate: [AdminGuard],
+    data: {state: 'admin'}
   }
 ]
 
@@ -60,14 +74,16 @@ const appRoutes: Routes = [
     FilterPipe,
     SearchBarComponent,
     BlogHomeComponent,
-    TextFormatDirective
+    TextFormatDirective,
+    BlogCreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-	FormsModule,
-	ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

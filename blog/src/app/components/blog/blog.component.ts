@@ -9,9 +9,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-  items: any;
+  items: any[];
 
-  @Input('filterText') filterText: string;
+  @Input() filterText: string;
 
   constructor(private dataService: DataServiceService, private router: Router, private route: ActivatedRoute) {
   }

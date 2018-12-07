@@ -1,0 +1,17 @@
+<form [formGroup]="form" class="omb_loginForm" action="post" autocomplete="off" method="POST">
+  <div class="input-group">
+    <input [(ngModel)]="credentials.login" formControlName="login" type="text" class="form-control"
+           name="username" placeholder="Nazwa" title="Wprowadź login">
+  </div>
+  <span class="help-block"></span>
+
+  <div class="input-group">
+    <input [(ngModel)]="credentials.password" formControlName="password" type="password" class="form-control"
+           name="password" placeholder="Hasło" title="Wprowadź hasło">
+  </div>
+  <span class="help-block">{{ error }}</span>
+
+  <button (click)="signIn()" class="btn btn-lg btn-pink btn-block" type="submit" title="Przycisk zaloguj">
+    Zaloguj
+  </button>
+</form>
