@@ -23,6 +23,8 @@ import { TextFormatDirective } from './directives/text-format.directive';
 import { BlogCreateComponent } from './components/blog-create/blog-create.component';
 import { AdminGuard } from './services/admin-guard.guard';
 import { LoginComponent } from './components/login/login.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './services/auth/auth.interceptor';
 // import { AdminProfileComponent } from './components/';
 
 const appRoutes: Routes = [
@@ -85,7 +87,13 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
